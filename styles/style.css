@@ -88,26 +88,44 @@ a {
   margin: 0.2rem 2.2rem;
 }
 
-input,
+.form-control input,
 label {
   display: block;
   width: 100%;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
-label {
-  font-size: 1.1rem;
+.form-control label {
+  font-size: 1.2rem;
   color: var(--grey-txt);
   font-weight: 700;
+  margin-top: 0.25rem;
 }
 
-input {
+.form-control input {
   font-size: 0.9rem;
   height: 1.5rem;
   border-radius: 8px;
   outline: none;
-  border: none;
+  border: 1px solid var(--grey-lt-bg);
   background-color: var(--grey-lt-bg);
+}
+
+.form-control.error input {
+  border-color: var(--red-clr);
+}
+
+.form-control.success input {
+  border-color: var(--grn-clr);
+}
+
+.form-control small {
+  color: var(--red-clr);
+  visibility: hidden;
+}
+
+.form-control.error small {
+  visibility: visible;
 }
 
 .btn-submit {
