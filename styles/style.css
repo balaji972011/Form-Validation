@@ -112,11 +112,11 @@ label {
 }
 
 .form-control.error input {
-  border-color: var(--red-clr);
+  border: 2px solid var(--red-clr);
 }
 
 .form-control.success input {
-  border-color: var(--grn-clr);
+  border: 2px solid var(--grn-clr);
 }
 
 .form-control small {
