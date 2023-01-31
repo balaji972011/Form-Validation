@@ -10,6 +10,7 @@
 }
 
 :root {
+  --grey-lt-bg: #f8f8f8;
   --grey-bg: #e5e5e5;
   --blck-bg: #000000;
   --grey-txt: #646464;
@@ -17,6 +18,7 @@
   --red-clr: #ca3042;
   --grn-clr: #1f8b02;
   --max-width: 1140px;
+  --transition: all 0.5s ease;
 }
 
 html {
@@ -26,7 +28,7 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: var(--grey-bg);
+  background-color: var(--grey-lt-bg);
 }
 
 img {
@@ -57,4 +59,70 @@ a {
   background-color: var(--blck-bg);
   color: var(--white-txt);
   border: 2px solid var(--blck-bg);
+}
+
+.container-center {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 18rem;
+  height: auto;
+  background-color: var(--grey-bg);
+  border: 2px solid var(--grey-bg);
+  border-radius: 8px;
+  padding: 1.8rem 1rem;
+}
+
+.title {
+  color: var(--grey-txt);
+  font-weight: 800;
+  text-align: center;
+  margin-top: 0.2rem;
+}
+
+.form-container {
+  margin: 0.2rem 2.2rem;
+}
+
+input,
+label {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+label {
+  font-size: 1.1rem;
+  color: var(--grey-txt);
+  font-weight: 700;
+}
+
+input {
+  font-size: 0.9rem;
+  height: 1.5rem;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  background-color: var(--grey-lt-bg);
+}
+
+.btn-submit {
+  display: block;
+  width: 100%;
+  height: 2rem;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  color: var(--white-txt);
+  font-weight: 700;
+  padding: 0rem 0.1rem 0rem;
+  transition: var(--transition);
+}
+
+.btn-submit:hover {
+  background-color: var(--grey-lt-bg);
+  color: var(--grey-txt);
 }
