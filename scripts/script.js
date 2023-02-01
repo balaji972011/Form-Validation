@@ -34,12 +34,27 @@ const checkRequired = function (arr) {
 };
 
 const checkLength = function (el, min, max) {
-  if (el.value.length < min) {
+  if (el.value === ``) {
+    showError(el, `${el.name} required`);
+  } else if (el.value.length < min) {
     showError(el, `${el.name} should have min ${min} characters`);
   } else if (el.value.length > max) {
     showError(el, `${el.name} should have max ${max} characters`);
   } else {
     showSuccess(el);
+  }
+};
+
+const checkEmail = function (el) {
+  const re =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  if (el.value === ``) {
+    showError(el, `${el.name} required`);
+  }
+  if (el.value.match(re)) {
+    showSuccess(el);
+  } else {
+    showError(el, `Enter valid ${el.name}`);
   }
 };
 
@@ -99,8 +114,9 @@ formEl.addEventListener(`submit`, (e) => {
   //   const formControlEl = confirmPasswordEl.parentElement;
   //   formControlEl.classList.add(`success`);
   // }
-  checkRequired(inputArr);
+  // checkRequired(inputArr);
   checkLength(usernameEl, 4, 16);
+  checkEmail(emailEl);
   checkLength(mobileEl, 10, 10);
   checkLength(passwordEl, 8, 15);
   checkPasswordMatch(passwordEl, confirmPasswordEl);
